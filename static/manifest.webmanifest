@@ -1,7 +1,7 @@
 {
-  "name": "Crisis Support Hub",
-  "short_name": "Crisis Hub",
-  "description": "Coping strategies, crisis lines, and anonymous peer support that work offline.",
+  "name": "Crisis Support Hub - India",
+  "short_name": "Crisis Hub IN",
+  "description": "Coping strategies, crisis hotlines, and anonymous peer support for India. Works offline.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f4f6f9",

@@ -74,6 +74,7 @@
     box.innerHTML = state.strategies.map((s) => `
       <article class="card">
         <h3>${escapeHtml(s.title)} <span class="pill">${escapeHtml(s.duration || '')}</span></h3>
+        ${s.video ? `<div class="video-container"><iframe width="100%" height="250" src="${escapeHtml(s.video)}?modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>` : ''}
         <ol>${s.steps.map((step) => `<li>${escapeHtml(step)}</li>`).join('')}</ol>
       </article>`).join('');
   }
@@ -134,6 +135,14 @@
     $('#net-status').classList.toggle('offline', !online);
   }
 
+  function updateCharCount() {
+    const input = $('#post-input');
+    const count = $('#char-count');
+    if (count) {
+      count.textContent = input.value.length;
+    }
+  }
+
   /* ---------------- data ---------------- */
   async function loadBootstrap() {
     try {
@@ -192,6 +201,7 @@
     if (!content) return;
     const payload = { content, client_id: newId() };
     input.value = '';
+    updateCharCount();
 
     try {
       const saved = await sendPost(payload);
@@ -235,6 +245,7 @@
   $('#post-input').addEventListener('keydown', (event) => {
     if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) submitPost();
   });
+  $('#post-input').addEventListener('input', updateCharCount);
 
   window.addEventListener('online', () => {
     renderNetStatus();

@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent
 STATIC_DIR = BASE_DIR / "static"
 
 app = FastAPI(
-    title="Crisis Support Hub",
+    title="Crisis Support Hub - India",
     version="0.1.0",
-    description="Offline-capable crisis support demo: coping strategies, hotlines, anonymous peer support.",
+    description="Offline-capable crisis support for India: coping strategies, mental health hotlines, anonymous peer support.",
 )
 
 # The frontend is served from this same origin, so CORS is only a convenience
@@ -48,8 +48,9 @@ app.add_middleware(
 STRATEGIES = [
     {
         "id": 1,
-        "title": "4-7-8 Breathing",
+        "title": "4-7-8 Breathing (चार-सात-आठ श्वास)",
         "duration": "~2 min",
+        "video": "https://www.youtube.com/embed/YzS26Fap_9M",
         "steps": [
             "Sit or lie down and let your shoulders drop.",
             "Inhale through the nose for a count of 4.",
@@ -60,8 +61,9 @@ STRATEGIES = [
     },
     {
         "id": 2,
-        "title": "5-4-3-2-1 Grounding",
+        "title": "5-4-3-2-1 Grounding (भूमि पर ध्यान)",
         "duration": "~3 min",
+        "video": "https://www.youtube.com/embed/ay4Ypf_Hqvk",
         "steps": [
             "Name 5 things you can see.",
             "Name 4 things you can touch.",
@@ -72,8 +74,9 @@ STRATEGIES = [
     },
     {
         "id": 3,
-        "title": "Cold Water Reset",
+        "title": "Cold Water Reset (ठंडे पानी का रीसेट)",
         "duration": "~1 min",
+        "video": "https://www.youtube.com/embed/dRK2xwTi80Q",
         "steps": [
             "Run cold water over your wrists, or splash your face.",
             "Breathe out longer than you breathe in (4 in, 6 out).",
@@ -84,31 +87,52 @@ STRATEGIES = [
 
 RESOURCES = [
     {
-        "id": 1, "name": "988 Suicide & Crisis Lifeline", "kind": "hotline",
-        "phone": "988", "sms": "988", "url": "https://988lifeline.org",
-        "lat": None, "lon": None, "note": "Call or text, 24/7, US",
+        "id": 1, "name": "AASRA Suicide Prevention", "kind": "hotline",
+        "phone": "9820466726", "sms": None, "url": "https://www.aasra.info",
+        "lat": None, "lon": None, "note": "Call 24/7 in English/Hindi, based in Mumbai",
     },
     {
-        "id": 2, "name": "Crisis Text Line", "kind": "text",
-        "phone": None, "sms": "741741", "url": "https://www.crisistextline.org",
-        "lat": None, "lon": None, "note": "Text HOME to 741741",
+        "id": 2, "name": "iCall - Emotional Support", "kind": "hotline",
+        "phone": "9152987821", "sms": None, "url": "https://www.icallhelpline.org",
+        "lat": None, "lon": None, "note": "Call/WhatsApp 24/7 for emotional support & counseling",
     },
     {
-        "id": 3, "name": "SAMHSA National Helpline", "kind": "hotline",
-        "phone": "1-800-662-4357", "sms": None,
-        "url": "https://www.samhsa.gov/find-help/national-helpline",
-        "lat": None, "lon": None, "note": "Free, confidential referral service, 24/7",
+        "id": 3, "name": "Vandrevala Foundation - iCall", "kind": "hotline",
+        "phone": "9999 666 555", "sms": None, "url": "https://www.vandrevalafoundation.com",
+        "lat": None, "lon": None, "note": "Crisis support & mental health counseling, 24/7",
     },
     {
-        "id": 4, "name": "Emergency Services", "kind": "emergency",
-        "phone": "911", "sms": None, "url": None,
-        "lat": None, "lon": None, "note": "Immediate danger to life or safety",
+        "id": 4, "name": "Befrienders India", "kind": "hotline",
+        "phone": "9871766333", "sms": None, "url": "https://www.befriendersindia.org",
+        "lat": None, "lon": None, "note": "Confidential support for depression & emotional crisis",
     },
     {
-        "id": 5, "name": "Placeholder Walk-In Clinic", "kind": "in_person",
-        "phone": None, "sms": None, "url": None,
-        "lat": 40.7306, "lon": -73.9866,
-        "note": "Fictional entry used to demo distance sorting — replace with verified local data",
+        "id": 5, "name": "Emergency Medical Services", "kind": "emergency",
+        "phone": "102", "sms": None, "url": None,
+        "lat": None, "lon": None, "note": "Medical emergency ambulance service across India",
+    },
+    {
+        "id": 6, "name": "Police Emergency", "kind": "emergency",
+        "phone": "100", "sms": None, "url": None,
+        "lat": None, "lon": None, "note": "Emergency police assistance, available 24/7",
+    },
+    {
+        "id": 7, "name": "All India Institute of Medical Sciences (AIIMS) - Delhi", "kind": "in_person",
+        "phone": "011-26593300", "sms": None, "url": "https://www.aiims.edu",
+        "lat": 28.5672, "lon": 77.2100,
+        "note": "Premier psychiatric & mental health services in New Delhi",
+    },
+    {
+        "id": 8, "name": "Apollo Hospitals - Mental Health", "kind": "in_person",
+        "phone": "1860-500-1066", "sms": None, "url": "https://www.apollohospitals.com",
+        "lat": 19.0760, "lon": 72.8777,
+        "note": "Psychiatry & counseling services across major Indian cities",
+    },
+    {
+        "id": 9, "name": "Fortis Healthcare - Mental Health Wing", "kind": "in_person",
+        "phone": "1800-274-0098", "sms": None, "url": "https://www.fortishealthcare.com",
+        "lat": 28.4595, "lon": 77.0266,
+        "note": "Crisis counseling & psychiatric care, Gurgaon & nationwide",
     },
 ]
 
