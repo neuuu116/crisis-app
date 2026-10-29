@@ -74,7 +74,7 @@
     box.innerHTML = state.strategies.map((s) => `
       <article class="card">
         <h3>${escapeHtml(s.title)} <span class="pill">${escapeHtml(s.duration || '')}</span></h3>
-        ${s.video ? `<div class="video-container"><iframe width="100%" height="250" src="${escapeHtml(s.video)}?modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>` : ''}
+        ${s.video_url ? `<div class="video-link-container"><a href="${escapeHtml(s.video_url)}" target="_blank" rel="noopener" class="video-link">▶ Watch Tutorial Video</a><p class="muted" style="font-size: 0.8rem; margin: 4px 0 0 0;">${escapeHtml(s.video_tutorial)}</p></div>` : ''}
         <ol>${s.steps.map((step) => `<li>${escapeHtml(step)}</li>`).join('')}</ol>
       </article>`).join('');
   }

@@ -50,7 +50,8 @@ STRATEGIES = [
         "id": 1,
         "title": "4-7-8 Breathing (चार-सात-आठ श्वास)",
         "duration": "~2 min",
-        "video": "https://www.youtube.com/embed/gz4G1SjJoVI",
+        "video_url": "https://www.youtube.com/watch?v=gz4G1SjJoVI",
+        "video_tutorial": "Search '4-7-8 Breathing Technique' on YouTube",
         "steps": [
             "Sit or lie down and let your shoulders drop.",
             "Inhale through the nose for a count of 4.",
@@ -63,7 +64,8 @@ STRATEGIES = [
         "id": 2,
         "title": "5-4-3-2-1 Grounding (भूमि पर ध्यान)",
         "duration": "~3 min",
-        "video": "https://www.youtube.com/embed/aHnXaRj-hWw",
+        "video_url": "https://www.youtube.com/watch?v=aHnXaRj-hWw",
+        "video_tutorial": "Search '5-4-3-2-1 Grounding Technique' on YouTube",
         "steps": [
             "Name 5 things you can see.",
             "Name 4 things you can touch.",
@@ -76,7 +78,8 @@ STRATEGIES = [
         "id": 3,
         "title": "Cold Water Reset (ठंडे पानी का रीसेट)",
         "duration": "~1 min",
-        "video": "https://www.youtube.com/embed/WCGqkUa5YQ4",
+        "video_url": "https://www.youtube.com/watch?v=WCGqkUa5YQ4",
+        "video_tutorial": "Search 'Vagal Reset Cold Water Technique' on YouTube",
         "steps": [
             "Run cold water over your wrists, or splash your face.",
             "Breathe out longer than you breathe in (4 in, 6 out).",
